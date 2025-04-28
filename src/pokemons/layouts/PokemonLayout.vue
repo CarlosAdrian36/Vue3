@@ -5,6 +5,9 @@ import type { RouterLink } from '@/router/list-routes'
 
 const routeLinks: RouterLink[] =
   pokemonRoute.children?.map(({ name, path, props }) => {
+    // console.log({name});
+    
+    
     return {
       name: name?.toString() ?? '',
       path: path,
@@ -15,7 +18,13 @@ const routeLinks: RouterLink[] =
 <template>
   <div>
     <NavBar :links="routeLinks" is-secondary />
-
-    <RouterView />
+    <!-- <Suspense> -->
+      <RouterView />
+      <!-- <template #fallback>
+        Loading...
+      </template>
+      
+    </Suspense> -->
   </div>
 </template>
+¶
